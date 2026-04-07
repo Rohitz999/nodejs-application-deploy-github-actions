@@ -1,4 +1,4 @@
-name: Deploy NodeJS Application to Hostinger
+name: Deploy NodeJS Application to AWS
 
 on:
   push:
@@ -22,9 +22,9 @@ jobs:
           script: |
             set -e
 
-            sudo cd /home/ubuntu/node-github-action/nodejs-application-deploy-github-actions
+            cd /home/ubuntu/node-github-action/nodejs-application-deploy-github-actions
 
-            sudo git pull origin main
+            git pull origin main
 
             sudo docker compose down
             sudo docker compose up -d --build
